@@ -10,8 +10,8 @@ read answer
 
 if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
 
-    info=$(bash ./system_info.sh)
-    echo "$info"
+    chmod +x save.sh
+    sourse ./save.sh
 
 else
     exit
