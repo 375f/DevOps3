@@ -1,8 +1,9 @@
 #!/bin/bash
 
-sudo apt update
-
-sudo sudo apt install net-tools
+if ! command -v ifconfig > /dev/null 2>&1; then
+    sudo apt update
+    sudo apt install -y net-tools
+fi
 
 echo "HOSTNAME = $HOSTNAME"
 
