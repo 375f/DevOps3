@@ -8,7 +8,7 @@ read answer
 
 if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
 
-    sourse ./save.sh
+    source ./save.sh
 
 else
     exit
