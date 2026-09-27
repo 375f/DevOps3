@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo HOSTNAME = $HOSTNAME
+hostname_value=$(hostname)
+echo "HOSTNAME = $hostname_value пися попа"
 echo TIMEZONE = $(timedatectl | grep "Time zone" | awk '{print $3}') $(date +%z)
 echo USER = $USER
 echo OS = $OSTYPE
