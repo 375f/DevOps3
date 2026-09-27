@@ -1,6 +1,8 @@
 #!/bin/bash
 
-interface=$(ip route | grep "default" | awk '{print $5}' | head -n 1)
+sudo apt update
+
+sudo sudo apt install net-tools
 
 echo "HOSTNAME = $HOSTNAME"
 
