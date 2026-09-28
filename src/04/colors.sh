@@ -49,10 +49,11 @@ get_font_color() {
     esac
 }
 
-column1_background=$(get_background_color "$1")
-column1_font=$(get_font_color "$2")
-column2_background=$(get_background_color "$3")
-column2_font=$(get_font_color "$4")
+column1_background=$(get_background_color "$column1_background_color")
+column1_font=$(get_font_color "$column1_font_color")
+column2_background=$(get_background_color "$column2_background_color")
+column2_font=$(get_font_color "$column2_font_color")
+
 
 column1_color="\033[${column1_background};${column1_font}m"
 column2_color="\033[${column2_background};${column2_font}m"
