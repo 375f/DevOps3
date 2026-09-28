@@ -22,7 +22,6 @@ folders_count=$(find "$path" -type d | wc -l)
 echo "Total number of folders (including all nested ones) = $folders_count"
 
 echo "TOP 5 folders of maximum size arranged in descending order (path and size):"
-echo
 
 du -h "$path" | sort -hr | head -n 5 | awk '{print NR " - " $2 ", " $1}'
 
