@@ -23,6 +23,7 @@ get_background_color() {
     esac
 }
 
+
 get_font_color() {
     local color="$1"
 
@@ -49,17 +50,16 @@ get_font_color() {
     esac
 }
 
-column1_background=$(get_background_color "$column1_background_color")
+
+column1_background_code=$(get_background_color "$column1_background")
 column1_font=$(get_font_color "$column1_font_color")
-column2_background=$(get_background_color "$column2_background_color")
+column2_background_code=$(get_background_color "$column2_background")
 column2_font=$(get_font_color "$column2_font_color")
 
 
-column1_color="\033[${column1_background};${column1_font}m"
-column2_color="\033[${column2_background};${column2_font}m"
+column1_color="\033[${column1_background_code};${column1_font}m"
+column2_color="\033[${column2_background_code};${column2_font}m"
 reset_color="\033[0m"
 
+
 source ./system_info.sh
-
-
-

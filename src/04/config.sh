@@ -25,7 +25,8 @@ get_what_color(){
     esac
 }
 
-what_color_column1_background=$(get_what_color $column1_background_color)
+
+what_color_column1_background=$(get_what_color $column1_background)
 what_color_column1_font=$(get_what_color $column1_font_color)
-what_color_column2_background=$(get_what_color $column2_background_color)
+what_color_column2_background=$(get_what_color $column2_background)
 what_color_column2_font=$(get_what_color $column2_font_color)

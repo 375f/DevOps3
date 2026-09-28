@@ -9,9 +9,9 @@ fi
 source ./config.conf
 
 
-if [[ ! "$column1_background_color" =~ ^[1-6]$ ]]; then
+if [[ ! "$column1_background" =~ ^[1-6]$ ]]; then
 
-    column1_background_color=2
+    column1_background=2
     column1_background_color_default=true
 
 else
@@ -19,6 +19,7 @@ else
     column1_background_color_default=false
 
 fi
+
 
 if [[ ! "$column1_font_color" =~ ^[1-6]$ ]]; then
 
@@ -31,9 +32,10 @@ else
 
 fi
 
-if [[ ! "$column2_background_color" =~ ^[1-6]$ ]]; then
 
-    column2_background_color=6
+if [[ ! "$column2_background" =~ ^[1-6]$ ]]; then
+
+    column2_background=6
     column2_background_color_default=true
 
 else
@@ -41,6 +43,7 @@ else
     column2_background_color_default=false
 
 fi
+
 
 if [[ ! "$column2_font_color" =~ ^[1-6]$ ]]; then
 
@@ -53,7 +56,8 @@ else
 
 fi
 
-if [[ "$column1_background_color" == "$column1_font_color" || "$column2_background_color" == "$column2_font_color" ]]; then
+
+if [[ "$column1_background" == "$column1_font_color" || "$column2_background" == "$column2_font_color" ]]; then
 
     echo -e "\033[31mERROR:\033[0m Цвета шрифта и фона одного столбца не должны совпадать. ;)"
     exit 1
@@ -61,46 +65,52 @@ if [[ "$column1_background_color" == "$column1_font_color" || "$column2_backgrou
 fi
 
 
+
 source ./colors.sh
 
 source ./config.sh
 
-echo
+echo 
 
 if [[ "$column1_background_color_default" == true ]]; then
 
     echo "Column 1 background = default ($what_color_column1_background)"
 
 else
-    echo "Column 1 background = $column1_background_color ($what_color_column1_background)"
+
+    echo "Column 1 background = $column1_background ($what_color_column1_background)"
 
 fi
+
 
 if [[ "$column1_font_color_default" == true ]]; then
 
     echo "Column 1 font color = default ($what_color_column1_font)"
 
 else
+
     echo "Column 1 font color = $column1_font_color ($what_color_column1_font)"
 
 fi
+
 
 if [[ "$column2_background_color_default" == true ]]; then
 
     echo "Column 2 background = default ($what_color_column2_background)"
 
 else
-    echo "Column 2 background = $column2_background_color ($what_color_column2_background)"
+
+    echo "Column 2 background = $column2_background ($what_color_column2_background)"
 
 fi
+
 
 if [[ "$column2_font_color_default" == true ]]; then
 
     echo "Column 2 font color = default ($what_color_column2_font)"
 
 else
+
     echo "Column 2 font color = $column2_font_color ($what_color_column2_font)"
 
 fi
-
-
