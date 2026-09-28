@@ -19,4 +19,4 @@ path="$1"
 
 folders_count=$(find "$path" -type d | wc -l)
 
-echo " = $folders_count"
+echo "Количество директорий  = $folders_count"
