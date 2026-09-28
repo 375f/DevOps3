@@ -50,12 +50,12 @@ get_font_color() {
 }
 
 column1_background=$(get_background_color "$1")
-column1_text=$(get_font_color "$2")
+column1_font=$(get_font_color "$2")
 column2_background=$(get_background_color "$3")
-column2_text=$(get_font_color "$4")
+column2_font=$(get_font_color "$4")
 
-column1_color="\033[${column1_background};${column1_text}m"
-column2_color="\033[${column2_background};${column2_text}m"
+column1_color="\033[${column1_background};${column1_font}m"
+column2_color="\033[${column2_background};${column2_font}m"
 reset_color="\033[0m"
 
 source ./system_info.sh

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if ! command -v ifconfig > /dev/null 2>&1; then
-    sudo apt update
-    sudo apt install -y net-tools
-fi
+#if ! command -v ifconfig > /dev/null 2>&1; then
+#    sudo apt update
+#    sudo apt install -y net-tools
+#fi
 
 echo -e "${column1_color}HOSTNAME${reset_color} = ${column2_color}$HOSTNAME${reset_color}"
 
