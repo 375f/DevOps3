@@ -37,7 +37,7 @@ echo "Configuration files (with the .conf extension) = $file_cfg_count"
 
 file_txt_count=$(find "$path" -type f -name "*.txt" | wc -l )
 
-echo "Text files: $file_txt_count"
+echo "Text files = $file_txt_count"
 
 file_executable_count=$(find "$path" -type f -executable | wc -l)
 
@@ -54,3 +54,17 @@ echo "Archive files = $file_archive_count"
 file_symlink_count=$(find "$path" -type l | wc -l)
 
 echo "Symbolic links = $file_symlink_count"
+
+echo "TOP 10 files of maximum size arranged in descending order (path, size and type):"
+
+i=1
+
+find "$path" -type f -exec du -h {} + | sort -hr | head -n 10 | while read -r size file; do
+
+    type="${file##*.}"
+
+    echo "$i - $file, $size, $type"
+
+    ((i++))
+
+done
