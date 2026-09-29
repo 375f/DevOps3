@@ -1,7 +1,5 @@
 #!/bin/bash
 
-SECONDS=0
-
 if [[ "$#" -ne 1 ]]; then
     echo "Нужно передать ровно один аргумент."
     exit 1
@@ -16,6 +14,8 @@ if [[ ! -d "$1" ]]; then
     echo "Указанной директории не существует."
     exit 1
 fi
+
+start_time=$(date +%s)
 
 path="$1"
 
@@ -85,6 +85,7 @@ find "$path" -type f -executable -exec du -h {} + | sort -hr | head -n 10 | whil
 
 done
 
-time=$SECONDS
+end_time=$(date +%s)
+final_time=$((end_time - start_time))
 
-echo "Script execution time (in seconds) = $time"
+echo "Script execution time (in seconds) = $final_time"
