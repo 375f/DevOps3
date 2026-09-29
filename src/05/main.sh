@@ -68,3 +68,17 @@ find "$path" -type f -exec du -h {} + | sort -hr | head -n 10 | while read -r si
     ((i++))
 
 done
+
+echo "TOP 10 executable files of the maximum size arranged in descending order (path, size and MD5 hash of file):"
+
+i=1
+
+find "$path" -type f -executable -exec du -h {} + | sort -hr | head -n 10 | while read -r size file; do
+
+    hash=$(md5sum "$file" | awk '{print $1}')
+
+    echo "$i - $file, $size, $hash"
+
+    ((i++))
+
+done
