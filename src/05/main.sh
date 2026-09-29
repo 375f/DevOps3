@@ -15,7 +15,7 @@ if [[ ! -d "$1" ]]; then
     exit 1
 fi
 
-start_time=$(date +%s)
+start_time=$(date +%s.%N)
 
 path="$1"
 
@@ -37,7 +37,7 @@ echo "Number of:"
 
 echo "Configuration files (with the .conf extension) = $file_cfg_count"
 
-file_txt_count=$(find "$path" -type f -name "*.txt" | wc -l )
+file_txt_count=$(find "$path" -type f -name "*.txt" | wc -l)
 
 echo "Text files = $file_txt_count"
 
