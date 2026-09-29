@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SECONDS=0
+
 if [[ "$#" -ne 1 ]]; then
     echo "Нужно передать ровно один аргумент."
     exit 1
@@ -82,3 +84,7 @@ find "$path" -type f -executable -exec du -h {} + | sort -hr | head -n 10 | whil
     ((i++))
 
 done
+
+time=$SECONDS
+
+echo "Script execution time (in seconds) = $time"
